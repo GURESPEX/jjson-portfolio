@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    font-size: 1rem;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::selection {
+    background: #0ff;
+    color: #000;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+menu {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: #000;
+}
+
+.cursor {
+    position: fixed;
+    width: 64px;
+    height: 64px;
+    translate: -50% -50%;
+    aspect-ratio: 1/1;
+    background: #0ff;
+    border-radius: 100%;
+    filter: blur(64px);
+    z-index: 1000000000000000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0, 1, 1, 1);
+}
+
+/* Hr */
+.hrBreak {
+    position: relative;
+    height: 64px;
+    border: none;
+    width: 1px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.hrBreak::before,
+.hrBreak::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    translate: -50% 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 16px;
+    border: 1px solid #fff;
+}
+
+.hrBreak::after {
+    top: 0%;
+    translate: -50% -100%;
+}
+
+/* Container */
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    background: linear-gradient(#000 50%, #0ff1 100%);
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.logo {
+    display: flex;
+    width: 128px;
+    padding: 0 8px;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+}
+
+.logo:hover {
+    opacity: .6;
+}
+
+/* Menu */
+menu {
+    position: fixed;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    left: 100%;
+    translate: 0 0;
+    width: 100%;
+    max-width: 265px;
+    height: 100%;
+    display: none;
+    background: #000;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+    z-index: 10000000;
+}
+
+#menu:checked+menu {
+    translate: -100% 0;
+}
+
+menu h1 {
+    font-size: 1.5em;
+    line-height: 100%;
+}
+
+menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+menu .closeBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #fff;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #0000;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+    z-index: 1000;
+}
+
+nav .flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #fff0;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+}
+
+nav .flex ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav .flex ul:last-of-type {
+    justify-content: end;
+}
+
+nav+* {
+    padding-top: 60.34px;
+}
+
+.scrollProgressBox {
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    display: flex;
+    width: calc(100% - 32px);
+    height: 1px;
+    background: #fff2;
+    opacity: 0;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+}
+
+.scrollProgressBar {
+    display: flex;
+    width: 0;
+    height: 100%;
+    background: #0ff;
+}
+
+.scrollProgressNum {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    translate: -100% 0;
+    display: flex;
+    color: #0ff;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background: linear-gradient(90deg, #0ff1 0%, #0000 75%), url("../images/my_images/bg_banner.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+header .flex {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    aspect-ratio: 16/9;
+}
+
+header .flex section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 32px;
+    border-left: 1px solid #fff;
+}
+
+header .flex section h1 {
+    text-transform: uppercase;
+    font-size: clamp(2.5em, 4vw, 5em);
+    line-height: 100%;
+}
+
+header .flex section p {
+    text-transform: uppercase;
+}
+
+.meImage {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
+}
+
+.light {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    translate: 50% 50%;
+    height: 75%;
+    aspect-ratio: 1/1;
+    background: #ff004c;
+    border-radius: 100%;
+    filter: blur(128px);
+    opacity: 0.8;
+}
+
+/* Article */
+article .flex {
+    gap: 64px;
+    padding: 64px 16px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.title {
+    width: max-content;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    margin: 0 auto;
+    padding-bottom: 16px;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50% 0;
+    width: 50%;
+    height: 1px;
+    background: #0ff;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+.bigIcon {
+    position: relative;
+    display: flex;
+    font-size: 10em;
+    margin: 0 auto;
+}
+
+.bigIcon p {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-size: 0.25em;
+    font-weight: bold;
+}
+
+.profileGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    gap: 64px;
+}
+
+.profileImage {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.profileImage img {
+    object-fit: contain;
+    width: inherit;
+    height: inherit;
+    border-radius: 4px;
+}
+
+.profileImage .my_profile {
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.infoBox section {
+    gap: 16px;
+}
+
+.infoBox .infoTitle {
+    line-height: 100%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #0ff;
+    width: max-content;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 564px;
+    margin: 0 auto;
+    gap: 16px;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.skillBox {
+    width: 100%;
+    height: 4px;
+    background: #fff2;
+}
+
+.skillBar {
+    position: relative;
+    height: 100%;
+}
+
+.skillTitle {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: .8em;
+    font-weight: bold;
+}
+
+.skillNum {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    translate: -100% 0;
+}
+
+.skillIcon {
+    position: relative;
+    font-size: 2em;
+    line-height: 0;
+}
+
+.skill:nth-of-type(1) {
+    color: #0bf;
+}
+
+.skill:nth-of-type(1) .skillBar {
+    background: #0bf;
+}
+
+.skill:nth-of-type(2) {
+    color: #f40;
+}
+
+.skill:nth-of-type(2) .skillBar {
+    background: #f40;
+}
+
+.skill:nth-of-type(3) {
+    color: #ff0;
+}
+
+.skill:nth-of-type(3) .skillBar {
+    background: #ff0;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.gridVideo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 32px 0;
+}
+
+.gridVideo video {
+    width: 100%;
+    border-radius: 4px;
+    outline: 1px solid #fff1;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+}
+
+.gridVideo video:nth-of-type(2) {
+    scale: 1.25;
+    z-index: 10;
+    box-shadow: 0 0 32px #000;
+}
+
+.gridVideo video:hover {
+    outline: 1px solid #0ff;
+    box-shadow: 0 0 128px #0ff4;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    background: #fff2;
+    outline: 1px solid #fff2;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.card p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    opacity: .6;
+}
+
+.cardTitle {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 24px;
+    font-size: 3em;
+    z-index: 1;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+    background: #0008;
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+}
+
+.card:hover .cardTitle {
+    opacity: 0;
+}
+
+.hl {
+    color: #0ff;
+}
+
+.channelImage {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    border-radius: 4px;
+    margin: 0 auto;
+    overflow: hidden;
+    outline: 1px solid #fff2;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+}
+
+.channelImage img {
+    width: 100%;
+}
+
+.channelLink {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    max-width: 128px;
+    width: 15%;
+    outline: 1px solid #fff2;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+    overflow: hidden;
+    margin: 16px;
+    border-radius: 4px;
+}
+
+.channelLink img {
+    width: 100%;
+}
+
+.channelLink:hover {
+    cursor: pointer;
+    filter: brightness(.6);
+}
+
+.channelText {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    transition: .3s cubic-bezier(0, 1, 1, 1);
+    overflow: hidden;
+    margin: 16px;
+    padding: 4px 16px;
+    background: #000;
+    border-radius: 4px;
+}
+
+/* Footer */
+footer .flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    font-size: 0.8em;
+}
+
+.footerBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    flex: 1
+}
+
+.copy {
+    opacity: 0.4;
+}
+
+.contactBox {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex: 1;
+    font-size: 1.5em;
+}

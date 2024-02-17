@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo_images/logo_icon.svg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>JJSON - Lesson</title>
+</head>
+
+<body>
+
+    <div class="cursor"></div>
+
+    <div class="container">
+
+        <input type="checkbox" id="menu" hidden>
+        <menu>
+            <div class="closeBox">
+                <label class="closeBtn" for="menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </label>
+                <h1>MENU</h1>
+            </div>
+            <ul>
+                <li><a href="index.html" class="navBtn">Home</a></li>
+                <li><a href="profile.html" class="navBtn">Profile</a></li>
+                <li><a href="hobby.html" class="navBtn">Hobby</a></li>
+                <li><a href="assignment.html" class="navBtn">Assignment</a></li>
+                <li><a href="lesson.html" class="navBtn navBtnHere">Lesson</a></li>
+                <li><a href="impressive.html" class="navBtn">Impressive</a></li>
+            </ul>
+        </menu>
+
+        <nav id="nav">
+            <div class="flex">
+                <ul>
+                    <li><a href="index.html" class="navBtn">Home</a></li>
+                    <li><a href="profile.html" class="navBtn">Profile</a></li>
+                    <li><a href="hobby.html" class="navBtn">Hobby</a></li>
+                </ul>
+                <a class="logo" href="index.html">
+                    <img src="images/logo_images/logo_white.svg" alt="JJSON Logo">
+                </a>
+                <ul>
+                    <li><a href="assignment.html" class="navBtn">Assignment</a></li>
+                    <li><a href="lesson.html" class="navBtn navBtnHere">Lesson</a></li>
+                    <li><a href="impressive.html" class="navBtn">Impressive</a></li>
+                </ul>
+                <label class="menuBtn" for="menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </label>
+
+                <div class="scrollProgressBox">
+                    <div class="scrollProgressBar">
+                        <div class="scrollProgressNum">0%</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <article>
+            <div class="flex">
+                <section>
+                    <h1 class="title">ความรู้สึกกับรายวิชานี้</h1>
+                </section>
+                <section>
+                    <div class="bigIcon">
+                        <p>5/5</p>
+                        <i class="ri-heart-3-fill"></i>
+                    </div>
+                </section>
+                <section>
+                    <p class="subtitle">
+                        <!-- ขออนุญาตพิมพ์ภาษาไทยนะครับ จริงก็อยากพิมพ์ภาษาอังกฤษเพราะกลัวจะไม่เข้าธีม
+                        แต่ขอเอาที่ผมสะดวกละกัน
+                        <br> -->
+                        ผมได้เรียนรู้พื้นฐานและเทคนิคต่าง ๆ จากวิชานี้ เช่น หลักการเขียน Tag
+                        HTML พวก Semantic Tag(การใช้ Tag ที่สื่อความหมาย), CSS Selector ต่าง ๆ
+                        และที่สำคัญคือหลักการออกแบบเว็ปไซต์
+                        <br>
+                        พี่ TA ใจดีมาก อาจารย์ก็ใจดี ผมนับถืออาจารย์มากเพราะอาจารย์ดูเป็นคนมีประสบการณ์มากมาย
+                        สามารถปรึกษาได้เสมอแต่ให้โปรเจคกลุ่มค่อนข้างยากไปหน่อยตรงกำหนดขั้นต่ำ 20 Layouts
+                        ซึ่งแค่ผมคิดหน้าตาเว็ปการจัดวางองค์ประกอบก็ยากอยู่แล้วเพราะผมหัวทึบ พอเจอกำหนด 20 Layouts
+                        เข้าไปก็หนักเอาเรื่อง
+                        เจอวิชานี้ความคิดที่อยากเป็น Full Stack ผมอยากเป็นแค่ Back End อย่างเดียวเลย
+                        แต่ก็ดีนะครับมันท้าทายดีตรงที่ผมจะทำได้ไหม แต่เอาจริง ๆ แล้วผมก็ทำได้ แต่ส่งไม่ทัน 555
+                        สรุปแล้วก็ชอบครับวิชานี้ เลิฟ ๆ
+                    </p>
+                </section>
+            </div>
+        </article>
+
+        <footer>
+            <div class="flex">
+                <div class="copy">JJSON &copy; 2022</div>
+                <div class="footerBox">
+                    <a href="index.html" class="footerBtn">Home</a>
+                    <a href="profile.html" class="footerBtn">Profile</a>
+                    <a href="hobby.html" class="footerBtn">Hobby</a>
+                    <a href="assignment.html" class="footerBtn">Assignment</a>
+                    <a href="lesson.html" class="footerBtn">lesson</a>
+                    <a href="impressive.html" class="footerBtn">Impressive</a>
+                </div>
+                <div class="contactBox">
+                    <a href="https://www.facebook.com/natthanan.thongchomphu" class="footerBtn"><i
+                            class="ri-facebook-circle-fill"></i></a>
+                    <a href="https://www.instagram.com/httan.j/" class="footerBtn"><i class="ri-instagram-fill"></i></a>
+                    <a href="https://www.youtube.com/c/R2MediaDesign2021" class="footerBtn"><i
+                            class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/global.js"></script>
+
+</body>
+
+</html>

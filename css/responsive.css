@@ -1,0 +1,99 @@
+@media screen and (max-width: 1280px) {}
+
+@media screen and (max-width: 1024px) {
+    .logo {
+        order: -1;
+    }
+
+    nav .flex ul {
+        justify-content: end;
+        flex: unset;
+    }
+
+    nav .flex ul:first-child {
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 96px;
+    }
+
+    nav .flex ul {
+        display: none;
+    }
+
+    .menuBtn {
+        display: flex;
+        margin-left: auto;
+    }
+
+    menu {
+        display: flex;
+    }
+
+    :root {
+        font-size: 0.9rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profileGrid {
+        gap: 16px;
+    }
+
+    .channelLink,
+    .channelText {
+        margin: 8px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    :root {
+        font-size: 0.8rem;
+    }
+
+    .gridVideo {
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+
+    .gridVideo video {
+        box-shadow: none;
+    }
+
+    .gridVideo video:nth-of-type(2) {
+        scale: unset;
+    }
+
+    .meImage {
+        width: 100%;
+        height: unset;
+    }
+
+    .profileGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .profileImage img {
+        padding: 16px;
+    }
+
+    .profileGrid .infoBox section {
+        align-items: center;
+    }
+
+    .channelLink,
+    .channelText {
+        margin: 4px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    :root {
+        font-size: 0.6rem;
+    }
+}
