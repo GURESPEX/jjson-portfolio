@@ -1,3 +1,3 @@
-# Web Design Technology Course Project
+# Web Design Technology Course Single Project
 
 Web-based portfolio.
